@@ -143,10 +143,11 @@ function filterCategory(category) {
 // メイン処理
 $(function () {
   $('.select').change(function () {
-    if ($('.select').val() === 'all') {
+    if ($(this).val() === 'all') {
       showItems(); //全リスト表示
+      return;
     } else {
-      filterCategory($('.select').val()); //フィルタリング
+      filterCategory($(this).val()); //フィルタリング
     }
   });
 });
