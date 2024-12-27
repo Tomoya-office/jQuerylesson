@@ -65,6 +65,31 @@
     // ・出てきたリストの上にホバーできるか
     // ※必ずレビュー前に上記挙動が問題ないか確認すること
 
+    // $(function () {
+    //   // hoverイベントを設定
+    //   $('.menu__list li').hover(function () {
+    //       $(this).children('.menu__list__childList').stop().slideDown();
+    //     },
+    //     function () {
+    //       // アニメーションを停止し、非表示にする
+    //       $(this).children('.menu__list__childList').stop().slideUp();
+    //     }
+    //   );
+    // });
+
+    function showDown() {
+      $(this).children('.menu__list__childList').stop().slideDown();
+    }
+    function showUp() {
+      $(this).children('.menu__list__childList').stop().slideUp();
+    }
+
+    $(function () {
+      $('.menu__list li').hover(
+        showDown,
+        showUp
+      );
+    });
 
   </script>
 </body>
